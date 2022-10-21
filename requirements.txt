@@ -1,0 +1,6 @@
+Adafruit-Blinka
+adafruit-circuitpython-charlcd
+adafruit-circuitpython-dht
+adafruit-circuitpython-dps310
+adafruit-circuitpython-mcp230xx
+adafruit-circuitpython-scd4x
