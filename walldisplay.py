@@ -2,7 +2,10 @@
 # coding=utf-8
 
 import sys
+import os
 import time
+from datetime import datetime
+import json
 
 import board
 import adafruit_character_lcd.character_lcd as LCD
@@ -77,6 +80,61 @@ def main():
                 dht22_humid = thermometer_dht22.humidity
             except RuntimeError as e:
                 print(f"DHT22 error: {e}")
+            except OverflowError as e:
+                print(f"DHT22 error: OverflowError: {e}")
+            
+            now = datetime.now()
+
+            data = {
+                "time"    : now.isoformat(' ', "seconds"),
+                "sensors" : [
+                    {
+                        "name"     : "dps310",
+                        "readings" : {
+                            "pressure" : {
+                                "value" : dps310_pressure,
+                                "units" : "hPa"
+                            },
+                            "temperature" : {
+                                "value" : dps310_temp,
+                                "units" : "C"
+                            }
+                        }
+                    },
+                    {
+                        "name"     : "scd40",
+                        "readings" : {
+                            "CO2" : {
+                                "value" : scd40_co2,
+                                "units" : "ppm"
+                            },
+                            "temperature" : {
+                                "value" : scd40_temp,
+                                "units" : "C"
+                            },
+                            "humidity" : {
+                                "value" : scd40_humid,
+                                "units" : r"%rH"
+                            }
+                        }
+                    },
+                    {
+                        "name"     : "dht22",
+                        "readings" : {
+                            "temperature" : {
+                                "value" : dht22_temp,
+                                "units" : "C"
+                            },
+                            "humidity" : {
+                                "value" : dht22_humid,
+                                "units" : r"%rH"
+                            }
+                        }
+                    }
+                ]
+            }
+
+            log(data, now)
 
             print(f"[{time.asctime()}] {c2f(dps310_temp):.1f}°F {c2f(scd40_temp):.1f}°F {c2f(dht22_temp or 0):.1f}°F  {scd40_humid:.1f}%rH {dht22_humid or 0}%rH  {hpa2inhg(dps310_pressure):.2f}inHg  {scd40_co2}ppm")
             
@@ -88,6 +146,15 @@ def main():
         thermometer_dht22.exit()
         lcd.clear()
         lcd.color = (0,0,0)
+        lcd.display = False
+
+
+def log(data, dt):
+    os.makedirs("logs", exist_ok=True)
+    fname = f"logs/{dt.date().isoformat()}.jsonl"
+    data_str = json.dumps(data, separators=(',',':'))
+    with open(fname, "a") as f:
+        f.write(data_str + "\n")
 
 
 c2f      = lambda c: (c * 9/5) + 32
