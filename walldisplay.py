@@ -6,6 +6,7 @@ import os
 from time import sleep
 from datetime import datetime
 import json
+import struct
 from typing import Optional, Sequence
 
 import board                                                    # type: ignore
@@ -56,7 +57,6 @@ def main():
             raise e
     
     pressure_sensor_dps310 = DPS310(board.I2C())
-    pressure_sensor_dps310.initialize()
 
     co2_sensor_scd40 = SCD4X(board.I2C())
     if co2_sensor_scd40.self_calibration_enabled:
@@ -146,6 +146,8 @@ def main():
             if now.timestamp() - last_log_time >= 60 - REFRESH_INTERVAL:  # log only once per minute or so
                 log(data, now)
                 last_log_time = now.timestamp()
+            
+            log_binary(now, dps310_pressure_hPa, dps310_temp_c, scd40_co2, scd40_temp_c, scd40_humid, dht22_temp_c, dht22_humid)
 
             avg_temp_c = average((dps310_temp_c, scd40_temp_c, dht22_temp_c))
             avg_humid = average((scd40_humid, dht22_humid))
@@ -206,6 +208,33 @@ def log(data, dt:datetime) -> None:
     data_str = json.dumps(data, separators=(',',':'))
     with open(fname, "a") as f:
         f.write(data_str + "\n")
+
+
+def log_binary(dt:datetime, dps310_pressure_hPa:float, dps310_temp_c:float, scd40_co2:int, scd40_temp_c:float, scd40_humid:float, dht22_temp_c:Optional[float], dht22_humid:Optional[float]):
+    NULL_16BIT = 0x7FFF
+    FORMAT = ">LffhHHhh"
+
+    timestamp = int(dt.timestamp())
+
+    scd40_temp_bin = int(2**16 * ((scd40_temp_c + 45) / 175))
+    scd40_humid_bin = int(2**16 * (scd40_humid / 100))
+
+    if dht22_temp_c is None:
+        dht22_temp_c = NULL_16BIT
+    else:
+        dht22_temp_c = int(10 * dht22_temp_c)
+    
+    if dht22_humid is None:
+        dht22_humid = NULL_16BIT
+    else:
+        dht22_humid = int(10 * dht22_humid)
+
+    data = struct.pack(FORMAT, timestamp, dps310_pressure_hPa, dps310_temp_c, scd40_co2, scd40_temp_bin, scd40_humid_bin, dht22_temp_c, dht22_humid)
+
+    os.makedirs("logs", exist_ok=True)
+    fname = f"logs/all_data.dat"
+    with open(fname, "ab") as f:
+        f.write(data)
 
 
 c2f      = lambda c: ((c * 9/5) + 32) if c is not None else None
