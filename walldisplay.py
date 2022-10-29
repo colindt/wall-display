@@ -46,6 +46,14 @@ def main():
     lcd = LCD.Character_LCD_RGB(columns=COLUMNS, lines=ROWS, **lcd_io)
     lcd.clear()
     lcd.color = (100,100,100)
+    lcd.create_char(0, (0,4,4,4,0,0,0,0))
+    lcd.create_char(1, (0,1,2,4,0,0,0,0))
+    lcd.create_char(2, (0,0,0,7,0,0,0,0))
+    lcd.create_char(3, (0,0,0,4,2,1,0,0))
+    lcd.create_char(4, (0,0,0,4,4,4,0,0))
+    lcd.create_char(5, (0,0,0,4,8,16,0,0))
+    lcd.create_char(6, (0,0,0,28,0,0,0,0))
+    lcd.create_char(7, (0,16,8,4,0,0,0,0))
 
     try:
         thermometer_dht22 = DHT22(dht22_pin)
@@ -69,16 +77,27 @@ def main():
 
     last_log_time = 0
 
+    i = -1
     try:
         while True:
-            dps310_pressure_hPa = pressure_sensor_dps310.pressure
-            dps310_temp_c = pressure_sensor_dps310.temperature
-
-            co2_sensor_scd40.set_ambient_pressure(round(dps310_pressure_hPa))
+            i += 1
             
-            scd40_co2 = co2_sensor_scd40.CO2
-            scd40_temp_c = co2_sensor_scd40.temperature
-            scd40_humid = co2_sensor_scd40.relative_humidity
+            try:
+                dps310_pressure_hPa = pressure_sensor_dps310.pressure
+                dps310_temp_c = pressure_sensor_dps310.temperature
+            except OSError as e:
+                print(f"DPS310 error: {e}")
+                continue
+            
+            try:
+                co2_sensor_scd40.set_ambient_pressure(round(dps310_pressure_hPa))
+                
+                scd40_co2 = co2_sensor_scd40.CO2
+                scd40_temp_c = co2_sensor_scd40.temperature
+                scd40_humid = co2_sensor_scd40.relative_humidity
+            except Exception as e:
+                print(f"SCD40 error: {repr(e)}")
+                continue
 
             dht22_temp_c = None
             dht22_humid = None
@@ -166,20 +185,26 @@ def main():
             date_msg     = f"{now.strftime(r'%a %d %b %Y')}"
             time_msg     = f"{now.strftime(r'%I:%M %p')}"
             error_msg    = "*" if dht22_temp_c is None else ""
+            status_msg   = chr(i % 8)
             temp_f_msg   = f"{avg_temp_f:.1f}\xdfF"
             temp_c_msg   = f"{avg_temp_c:.1f}\xdfC"
             humid_msg    = f"{avg_humid:.1f}%rH"
             pressure_msg = f"{dps310_pressure_inHg:.2f} inHg"
             co2_msg      = f"{scd40_co2} ppm"
 
-            msg  = f"{msg_line(date_msg, error_msg)}\n"
+            msg  = f"{msg_line(date_msg, error_msg + status_msg)}\n"
             msg += f"{msg_line(time_msg, humid_msg)}\n"
             msg += f"{msg_line(temp_f_msg, pressure_msg)}\n"
             msg += f"{msg_line(temp_c_msg, co2_msg)}"
-            lcd.message = msg
+
+            try:
+                lcd.message = msg
+            except OSError as e:
+                print(f"LCD error: {e}")
 
             sleep(REFRESH_INTERVAL)
     except KeyboardInterrupt:
+        print(f"{i} loops")
         print("Exiting")
         pressure_sensor_dps310.mode = DPS310_Mode.IDLE
         co2_sensor_scd40.stop_periodic_measurement()

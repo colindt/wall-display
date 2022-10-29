@@ -42,8 +42,8 @@ with open(fname) as f, open(fname + ".dat", "rb") as g:
             dht22_humid_d = dht22_humid_d / 10
         
         assert t_j == t_d
-        assert dps310_pressure_hPa_j - dps310_pressure_hPa_d < 1e-4
-        assert dps310_temp_c_j - dps310_temp_c_d < 1e-4
+        assert abs(dps310_pressure_hPa_j - dps310_pressure_hPa_d) < 1e-4
+        assert abs(dps310_temp_c_j - dps310_temp_c_d) < 1e-4
         assert scd40_co2_j == scd40_co2_d
         assert scd40_temp_c_j == scd40_temp_c_d
         assert scd40_humid_j == scd40_humid_d
