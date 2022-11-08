@@ -28,8 +28,8 @@ with open(fname) as f, open(fname + ".dat", "rb") as g:
 
         t_d, dps310_pressure_hPa_d, dps310_temp_c_d, scd40_co2_d, scd40_temp_bin_d, scd40_humid_bin_d, dht22_temp_c_d, dht22_humid_d = d
 
-        scd40_temp_c_d = -45 + 175 * (scd40_temp_bin_d / 2**16)
-        scd40_humid_d = 100 * (scd40_humid_bin_d / 2**16)
+        scd40_temp_c_d = -45 + 175 * scd40_temp_bin_d / 2**16
+        scd40_humid_d = 100 * scd40_humid_bin_d / 2**16
 
         if dht22_temp_c_d == NULL:
             dht22_temp_c_d = None

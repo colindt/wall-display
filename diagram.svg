@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   width="183.56563mm"
+   height="129.52458mm"
+   viewBox="0 0 183.56563 129.52458"
+   version="1.1"
+   id="svg8">
+  <defs
+     id="defs2" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     id="layer1"
+     transform="translate(-22.592545,-27.29543)">
+    <path
+       id="path1131"
+       style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:medium;line-height:normal;font-family:sans-serif;font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-variant-east-asian:normal;font-feature-settings:normal;font-variation-settings:normal;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;writing-mode:lr-tb;direction:ltr;text-orientation:mixed;dominant-baseline:auto;baseline-shift:baseline;text-anchor:start;white-space:normal;shape-padding:0;shape-margin:0;inline-size:0;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;vector-effect:none;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:1.00157;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate;stop-color:#000000;stop-opacity:1"
+       d="m 303.9707,184.6582 v 80.99414 H 187.10156 v 73.89258 h 7.5586 v -66.33398 h 351.10546 v -7.5586 H 445.32031 v -71.39062 h -7.55859 v 71.39062 H 311.53125 V 184.6582 Z"
+       transform="scale(0.26458333)" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 119.52483,89.837717 h 26.59142"
+       id="path1040" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 50.504835,89.837719 V 113.84018"
+       id="path1038" />
+    <g
+       id="g970"
+       transform="translate(5.9038391,11.663269)">
+      <rect
+         style="fill:#ffffff;stroke:#000000;stroke-width:0.264583;stroke-linecap:round"
+         id="rect835-5"
+         width="25.4"
+         height="22.859999"
+         x="62.821007"
+         y="25.764442" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.5px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;text-anchor:middle;stroke-width:0.264583"
+         x="75.450813"
+         y="36.309677"
+         id="text877"><tspan
+           id="tspan875"
+           x="75.450813"
+           y="36.309677"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;text-anchor:middle;stroke-width:0.264583">SCD40</tspan><tspan
+           x="75.450813"
+           y="39.434677"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;text-anchor:middle;stroke-width:0.264583"
+           id="tspan879">CO<tspan
+   style="font-size:65%;baseline-shift:sub"
+   id="tspan881">2</tspan> sensor</tspan></text>
+    </g>
+    <g
+       id="g976"
+       transform="translate(4.6190414,11.663269)">
+      <rect
+         style="fill:#ffffff;stroke:#000000;stroke-width:0.264583;stroke-linecap:round"
+         id="rect835"
+         width="25.4"
+         height="17.780001"
+         x="99.505806"
+         y="30.844448" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.5px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;stroke-width:0.264583"
+         x="112.08312"
+         y="39.081982"
+         id="text889"><tspan
+           id="tspan891"
+           x="112.08312"
+           y="39.081982">DPS310</tspan><tspan
+           id="tspan893"
+           x="112.08312"
+           y="42.206982">Pressure Sensor</tspan></text>
+    </g>
+    <g
+       id="g957"
+       transform="translate(-0.20850544)">
+      <rect
+         style="fill:#ffffff;stroke:#000000;stroke-width:0.264583;stroke-linecap:round"
+         id="rect856"
+         width="15.1"
+         height="20"
+         x="-97.387718"
+         y="109.73333"
+         transform="rotate(-90)" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.5px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;stroke-width:0.264583"
+         x="119.80352"
+         y="86.060249"
+         id="text897"><tspan
+           id="tspan911"
+           x="119.80352"
+           y="86.060249">DHT22</tspan><tspan
+           id="tspan913"
+           x="119.80352"
+           y="89.185249">Temperature</tspan><tspan
+           id="tspan915"
+           x="119.80352"
+           y="92.310249">&amp; Humidity</tspan><tspan
+           id="tspan917"
+           x="119.80352"
+           y="95.435249">Sensor</tspan></text>
+    </g>
+    <g
+       id="g963"
+       transform="translate(1.0282593,0.1687746)">
+      <rect
+         style="fill:#ffffff;stroke:#000000;stroke-width:0.264583;stroke-linecap:round"
+         id="rect852"
+         width="35.560001"
+         height="10.16"
+         x="31.696577"
+         y="84.588943" />
+      <text
+         xml:space="preserve"
+         style="font-size:2.5px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:center;text-anchor:middle;stroke-width:0.264583"
+         x="49.406387"
+         y="88.77417"
+         id="text921"><tspan
+           id="tspan919"
+           x="49.406387"
+           y="88.77417"
+           style="text-align:center;text-anchor:middle;stroke-width:0.264583">MCP23017</tspan><tspan
+           x="49.406387"
+           y="91.89917"
+           style="text-align:center;text-anchor:middle;stroke-width:0.264583"
+           id="tspan923">GPIO expander</tspan></text>
+    </g>
+    <g
+       id="g944"
+       transform="translate(1.0282593,-3.8599548)">
+      <rect
+         style="fill:#ffffff;stroke:#000000;stroke-width:0.264583;stroke-linecap:round"
+         id="rect854"
+         width="96.800003"
+         height="39.299999"
+         x="31.696577"
+         y="111.24767" />
+      <text
+         xml:space="preserve"
+         style="font-size:2.5px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:center;text-anchor:middle;stroke-width:0.264583"
+         x="80.07888"
+         y="131.82968"
+         id="text927"><tspan
+           id="tspan925"
+           x="80.07888"
+           y="131.82968"
+           style="text-align:center;text-anchor:middle;stroke-width:0.264583">20x4 Character LCD</tspan></text>
+    </g>
+    <g
+       id="g949"
+       transform="translate(-2.7585106,0.84105511)">
+      <rect
+         style="fill:#ffffff;stroke:#000000;stroke-width:0.264583;stroke-linecap:round"
+         id="rect833"
+         width="85.599998"
+         height="56.5"
+         x="-134.01666"
+         y="142.28439"
+         transform="rotate(-90)" />
+      <text
+         xml:space="preserve"
+         style="font-size:2.5px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:center;text-anchor:middle;stroke-width:0.264583"
+         x="170.5289"
+         y="91.906357"
+         id="text931"><tspan
+           id="tspan929"
+           x="170.5289"
+           y="91.906357"
+           style="text-align:center;text-anchor:middle;stroke-width:0.264583">Raspberry Pi</tspan></text>
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-size:2.5px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:center;text-anchor:middle;stroke-width:0.264583"
+       x="99.069916"
+       y="69.551918"
+       id="text1140"><tspan
+         id="tspan1138"
+         x="99.069916"
+         y="69.551918"
+         rotate="0 0 0 0">I<tspan
+   style="font-size:65%;baseline-shift:super"
+   id="tspan1148">2</tspan>C</tspan></text>
+  </g>
+</svg>
